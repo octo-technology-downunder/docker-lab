@@ -2,6 +2,9 @@
 
 This lab is part of the foundations trainings at OCTO Technology Australia. It is an introduction for getting started with docker !
 
+<img src="./static/docker_img.png" width="600" height="200"/>
+
+
 # 1. Overview of what is Docker
 
 Docker is a tool designed to make it easier to create, deploy, and run applications by using containers.
@@ -16,19 +19,14 @@ Need to install docker.
 
 Here are the main concepts we'll try to cover briefly in this introduction to Docker ! 
 
-> Image 
+**Image** -- **Container** -- **Dockerfile** -- **Volume** -- **Registry** -- **Compose**
 
-> Container 
+Maximum suspens, right ? Let the fun begin... !
 
-> Dockerfile 
-
-> Volume 
-
-> Registry
 
 ### Docker cli
 
-First, Docker comes with a Command Line Interface to help you manage your containers. See [this](https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf) CheatSheet for more details on major commands ;) 
+First, Docker comes with a Command Line Interface to help you manage your containers. See [this cheatsheet](https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf) for more details on major commands ;) 
 
 When creating a containerized application, you have 2 options:
 * Pull existing images from [Docker hub](https://hub.docker.com/)
@@ -47,9 +45,9 @@ When the Docker user runs an image, it becomes an instance of that container.
 
 Still not clear ? I get it, for more information, see [here](https://stackoverflow.com/questions/23735149/what-is-the-difference-between-a-docker-image-and-a-container)
 
-Here is a little picture showing how all these notions map to each other. Hope this help !
+Here is a little picture to show how all these notions map with each other. Hope this help !
 
-<img src="./static/vGuay.png" />
+<img src="./static/vGuay.png" width="500" height="400"/>
 
 
 # 2. Time to run our first containers !
