@@ -1,4 +1,4 @@
-# docker-lab
+# Docker-lab
 
 This lab is part of the foundations trainings at OCTO Technology Australia. It is an introduction for getting started with docker !
 
@@ -6,8 +6,17 @@ This lab is part of the foundations trainings at OCTO Technology Australia. It i
   <img src="./static/docker_img.png" width="600" height="300"/>
 </p>
 
-
-# 1. Overview of what is Docker
+Here is the table of content of this Lab:\
+\
+    **1. Overview of Docker**\
+    **2. Docker Run, Docker Hub and networks**\
+    **3. Dockerfile, how to build our own container**\
+    **4. Docker compose to manage all our containers !**
+    **X. Useful resources to go deeper**
+ 
+It will take approximately 1 hour to complete.
+ 
+# 1. Overview of what Docker is...
 
 Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. \
 Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package. \
@@ -200,7 +209,7 @@ Go take a cup of coffee or a healthy juice, you've earned it and join me in the 
 ### Docker compose
 
 
-# X. Ressources
+# X. Resources
 
 Docker documentation
 > https://docs.docker.com/
