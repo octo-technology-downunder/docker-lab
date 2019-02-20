@@ -1,6 +1,6 @@
 # Docker-lab
 
-This lab is part of the foundations trainings at OCTO Technology Australia. It is an introduction for getting started with docker !
+This lab is part of the foundations trainings at OCTO Technology Australia. It is an introduction for getting started with **Docker** !
 
 <p align="center">
   <img src="./static/docker_img.png" width="600" height="300"/>
@@ -11,10 +11,10 @@ Here is the table of content of this Lab:\
     **1. Overview of Docker**\
     **2. Docker Run, Docker Hub and networks**\
     **3. Dockerfile, how to build our own container**\
-    **4. Docker compose to manage all our containers !**
+    **4. Docker compose to manage all our containers !** \
     **X. Useful resources to go deeper**
  
-It will take approximately 1 hour to complete.
+It will take approximately 1 hour (of fun) to complete !
  
 # 1. Overview of what Docker is...
 
@@ -28,7 +28,7 @@ Need to install docker.
 
 ### Docker main concepts
 
-Here are the main concepts we'll try to cover briefly in this introduction lab on Docker ! 
+Here are the main concepts we'll try to cover briefly in this introduction lab ! 
 
 **Image** -- **Container** -- **Dockerfile** -- **Volume** -- **Registry** -- **Compose**
 
@@ -41,7 +41,7 @@ First, Docker comes with a Command Line Interface to help you manage your contai
 
 When creating a containerized application, you have 2 options:
 * Pull existing images from [Docker hub](https://hub.docker.com/)
-* Build your own containers with a custom Dockerfile
+* Build your own containers with a custom Dockerfiles
 
 We will have a look at these 2 options below.
 
@@ -136,7 +136,7 @@ docker network ls
 ```
 
 You'll see the current list of existing networks. Bridge? host ? etc ... ? What are they ? \
-You'll find good informations about that [here](https://blog.docker.com/2016/12/understanding-docker-networking-drivers-use-cases/)
+You'll find good informations about that [here](https://blog.docker.com/2016/12/understanding-docker-networking-drivers-use-cases/).
 
 If you want to create a new one, easy again, just use :
 ```bash
@@ -217,5 +217,5 @@ Docker documentation
 Docker cheat sheet
 > https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf
 
-Docker Mooc
+Docker Mooc (Awesome ! Truly recommend it until Part 6 for a deep overview...)
 > Docker Mastery: The Complete Toolset From a Docker Captain
