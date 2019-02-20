@@ -2,7 +2,9 @@
 
 This lab is part of the foundations trainings at OCTO Technology Australia. It is an introduction for getting started with docker !
 
-<img src="./static/docker_img.png" width="600" height="200"/>
+<p align="center">
+  <img src="./static/docker_img.png" width="600" height="300"/>
+</p>
 
 
 # 1. Overview of what is Docker
@@ -47,7 +49,9 @@ Still not clear ? I get it, for more information, see [here](https://stackoverfl
 
 Here is a little picture to show how all these notions map with each other. Hope this help !
 
-<img src="./static/vGuay.png" width="500" height="400"/>
+<p align="center">
+  <img src="./static/vGuay.png" width="500" height="400"/>
+</p>
 
 
 # 2. Time to run our first containers !
@@ -90,7 +94,9 @@ docker container ps
 
 Yeah ! You should see the two containers you've created listed like below.
 
-<img src="./static/docker_container_ls.png" />
+<p align="center">
+  <img src="./static/docker_container_ls.png"/>
+</p>
 
 ps : **-a** allow you to see all containers, event the stopped ones but we'll see that later.
 
@@ -102,7 +108,9 @@ curl localhost
 
 You should see a nice message from nginx :
 
-<img src="./static/curl_nginx.png" />
+<p align="center">
+  <img src="./static/curl_nginx.png" width="500" height="400"/>
+</p>
 
 All is up and running, so easy and fast right ?
 
