@@ -110,6 +110,14 @@ Yeah ! You should see the two containers you've created listed like below.
 
 ps : **-a** allow you to see all containers, event the stopped ones but we'll see that later.
 
+As you can see, we've run a container in daemon... Now, suppose you want to access his logs, important command :
+
+```bash
+docker container logs <your_container_name>
+```
+
+All the logs are supposed to print in your terminal. Easy ! Here you won't see anything but just keep that in mind to debug for your future missions.
+
 Now try to curl to your localhost ...
 
 ```bash
@@ -122,7 +130,7 @@ You should see a nice message from nginx :
   <img src="./static/curl_nginx.png" width="500" height="400"/>
 </p>
 
-All is up and running, so easy and fast right ?
+All is up and running, quite fast to right ?
 
 
 ### Docker network
@@ -159,7 +167,7 @@ BOUM, a JSON file will prompt in your console !
 You can see some basic information and specially the list of all containers inside this network, cool !
 
 <p align="center">
-  <img src="./static/network_json.png" width="400" height="600"/>
+  <img src="./static/network_json.png" width="500" height="600"/>
 </p>
 
 That's it for this part, don't forget to stop and remove your containers ! \
@@ -197,10 +205,51 @@ Go take a cup of coffee or a healthy juice, you've earned it and join me in the 
 
 # 3. docker build, dockerfile
 
-**Dockerfile**
+You now know how to quickly run a container by using DOcker Hub and all the pre-built image that are available. Cool ! \
+Now, we are going to talk about a new notion : the **Dockerfile** ! \
+It allows you to create your own custom container. You can find [here](https://docs.docker.com/engine/reference/builder/) all you need to know about it. It's quite big right ?\
+Don't worry, you don't need to know all this stuff for now. We'll take a look at the most important elements below !
+
+The Dockerfile allows you to create the list of instructions necessary to create your container.
+
+Take a look at the Dockerfile it the current directory. Don't focus on the command after the "RUN" parameter. \
+Here's a list of the most important KEYWORDS :
+* **FROM** : used to install the minimal Linux distribution on the container. 
+* **RUN** : used to list the commands to execute on your container.
+* **ADD** : used to add custom files (ex: config files) inside your container.
+* **VOLUME** : used to create a volume inside the container to store data.
+* **EXPOSE** : used to list the port exposed to the "outside world".
+* **CMD** : command to execute when the container is launched.
+
+Now, it's your turn to work a little bit.... Have a deeper look at all those 6 Keywords in the documentation [here](https://docs.docker.com/engine/reference/builder/).
 
 ### Docker build
 
+Well, quite a lot of things to grasp. But so simple to create a container ! Do you feel the power of Docker now ? \
+Now that you're a Dockerfile master, let's build our image ! 
+
+```bash
+docker image build -t="my_first_image" .
+```
+
+You should see step by step Logs in your terminal. All is complete ? Great, run our first custom container, so much emotion, right ?
+
+```bash
+docker run -d --name my_first_container -p 80:80  my_first_image
+```
+
+Well done ! It's up and running... Feel free to inspect your container with :
+
+```bash
+docker container inspect my_first_container
+```
+
+
+Ok, quite a lot to learn with the Dockerfile and all her KEYWORDS. Be sure to understand the main notions, have a look at the doc if you have still questions about it.\
+Let's have a break because in our next topic, we'll learn how to manage and run all our containers in one file.\
+Spoiler alert : **Docker compose** is coming ...
+
+ps : don't forget to remove your container !
 
 # 4. Docker compose, how to manage multiple container in one file...
 
@@ -218,4 +267,4 @@ Docker cheat sheet
 > https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf
 
 Docker Mooc (Awesome ! Truly recommend it until Part 6 for a deep overview...)
-> Docker Mastery: The Complete Toolset From a Docker Captain
+> Docker Mastery: The Complete Toolset From a Docker Captain (https://www.udemy.com/docker-mastery/)
