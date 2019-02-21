@@ -212,6 +212,11 @@ Don't worry, you don't need to know all this stuff for now. We'll take a look at
 
 The Dockerfile allows you to create the list of instructions necessary to create your container.
 
+<p align="center">
+  <img src="./static/dockerfile_build_run.png" width="600" height="300"/>
+</p>
+
+
 Take a look at the Dockerfile it the current directory. Don't focus on the command after the "RUN" parameter. \
 Here's a list of the most important KEYWORDS :
 * **FROM** : used to install the minimal Linux distribution on the container. 
