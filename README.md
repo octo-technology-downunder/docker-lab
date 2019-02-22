@@ -14,7 +14,7 @@ Here is the table of content of this Lab:\
     **4. Docker compose to manage all our containers !** \
     **X. Useful resources to go deeper**
  
-It will take approximately 1 hour (of fun) to complete !
+It will take approximately 1 hour 30 (of fun) to complete !
  
 # 1. Overview of what Docker is...
 
@@ -217,7 +217,7 @@ The Dockerfile allows you to create the list of instructions necessary to create
 </p>
 
 
-Take a look at the Dockerfile it the current directory. Don't focus on the command after the "RUN" parameter. \
+Take a look at the Dockerfile it the current directory. \
 Here's a list of the most important KEYWORDS :
 * **FROM** : used to install the minimal Linux distribution on the container. 
 * **RUN** : used to list the commands to execute on your container.
@@ -231,26 +231,27 @@ Now, it's your turn to work a little bit.... Have a deeper look at all those 6 K
 ### Docker build
 
 Well, quite a lot of things to grasp. But so simple to create a container ! Do you feel the power of Docker now ? \
-Now that you're a Dockerfile master, let's build our image ! 
+Now that you're a Dockerfile master, let's build our image ! How do we do ? \
+Easy again... But be sure to have only your Dockerfile in your current directory ! Or the "Build operation" will go down recursively in all your files to build your image.
 
 ```bash
 docker image build -t="my_first_image" .
 ```
 
-You should see step by step Logs in your terminal. All is complete ? Great, run our first custom container, so much emotion, right ?
+You should see step by step Logs in your terminal. All is complete ? Great, run your first custom container now, so much emotion...
 
 ```bash
 docker run -d --name my_first_container -p 80:80  my_first_image
 ```
 
-Well done ! It's up and running... Feel free to inspect your container with :
+Tadaaa! It's up and running... Feel free to inspect your container with :
 
 ```bash
 docker container inspect my_first_container
 ```
 
 
-Ok, quite a lot to learn with the Dockerfile and all her KEYWORDS. Be sure to understand the main notions, have a look at the doc if you have still questions about it.\
+Ok, quite a lot to learn with the Dockerfile and all the Keywords. Be sure to understand the main notions, have a look at the doc if you have still questions about it.\
 Let's have a break because in our next topic, we'll learn how to manage and run all our containers in one file.\
 Spoiler alert : **Docker compose** is coming ...
 
@@ -258,18 +259,57 @@ ps : don't forget to remove your container !
 
 # 4. Docker compose, how to manage multiple container in one file...
 
-**Volumes**
+Before talking about docker compose, let's learn how we link data to our containers !\
+But before that, it is important to know that there is not different concepts : **Bind mounts & volumes**\
+Find some information on the doc [here](https://docs.docker.com/storage/) or on stackoverflow [here](https://stackoverflow.com/questions/34357252/docker-data-volume-vs-mounted-host-directory).
+
+How do we do it now ? With the **-v** parameter. Just like this :
+```bash
+docker run -d --name proxy -p 80:80 -v nginx.conf:/etc/nginx/conf.d/default.conf nginx 
+```
+
+Help : -v path_of_file_to_map:/path_of_file_inside_container
+
+Now, you know how to provides custom configurations files inside your containers ! The same applies for any type of data :)
+Great, now the final topic we will cover... Let's go for compose !
 
 ### Docker compose
 
+A usual application is composed of multiple containers with links between them, maybe several volumes as well. We need a way to manage all of this. \
+That's where Docker-Compose comes into play !\
+It provides a simple way of defining your containerized application in a single yaml file. \
+In other words, it simply allows you ta avoid launching multiple "docker run" commands from your terminal and synthesize all these in one file. Cool.\
+
+<p align="center">
+  <img src="./static/dockerfile_build_run.png" width="600" height="200"/>
+</p>
+
+An example of compose yaml file is provided in the repository and another one with some comments about each section.\
+Before continue, please have a look at docker compose documentation [overview](https://docs.docker.com/compose/overview/).
+
+More clear now ? Great. to start your app, be sure to be in the directory with your yaml file and just run :
+```bash
+docker-compose up
+```
+
+Yeah, that's it ! You noticed that we previously used 2 docker run commands with multiple parameters... \
+Now, with just docker-compose up, it's all done. Easy, right ? \ 
+We won't go more in details of compose in this lab as it is only an introduction and you already learned quite a lot today...\
+If you're curious, I encourage you to start with the [getting started](https://docs.docker.com/compose/gettingstarted/) from Docker documentation.
+
+That's it... You've completed the lab. Well done again, hope you enjoyed it ! If you want to improve this lab, if you find bugs or somethings are not clear, raise a pull request !
+
 
 # X. Resources
+
+Still have a lot of questions ? **Good For You** ! Really happy that you liked Docker as you will probably use it a lot very soon...\
+Here are some great resources to grasp knowledge if you want. Enjoy !
+
+Docker Mooc (Awesome ! Truly recommend it until Part 6 for a deep overview...)
+> Docker Mastery: The Complete Toolset From a Docker Captain (https://www.udemy.com/docker-mastery/)
 
 Docker documentation
 > https://docs.docker.com/
 
 Docker cheat sheet
 > https://www.docker.com/sites/default/files/Docker_CheatSheet_08.09.2016_0.pdf
-
-Docker Mooc (Awesome ! Truly recommend it until Part 6 for a deep overview...)
-> Docker Mastery: The Complete Toolset From a Docker Captain (https://www.udemy.com/docker-mastery/)
