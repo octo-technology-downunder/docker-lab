@@ -205,7 +205,7 @@ Go take a cup of coffee or a healthy juice, you've earned it and join me in the 
 
 # 3. docker build, dockerfile
 
-You now know how to quickly run a container by using DOcker Hub and all the pre-built image that are available. Cool ! \
+You now know how to quickly run a container by using Docker Hub and all the pre-built image that are available. Cool ! \
 Now, we are going to talk about a new notion : the **Dockerfile** ! \
 It allows you to create your own custom container. You can find [here](https://docs.docker.com/engine/reference/builder/) all you need to know about it. It's quite big right ?\
 Don't worry, you don't need to know all this stuff for now. We'll take a look at the most important elements below !
@@ -259,6 +259,8 @@ ps : don't forget to remove your container !
 
 # 4. Docker compose, how to manage multiple container in one file...
 
+### Volumes
+
 Before talking about docker compose, let's learn how we link data to our containers !\
 But before that, it is important to know that there is not different concepts : **Bind mounts & volumes**\
 Find some information on the doc [here](https://docs.docker.com/storage/) or on stackoverflow [here](https://stackoverflow.com/questions/34357252/docker-data-volume-vs-mounted-host-directory).
@@ -278,10 +280,10 @@ Great, now the final topic we will cover... Let's go for compose !
 A usual application is composed of multiple containers with links between them, maybe several volumes as well. We need a way to manage all of this. \
 That's where Docker-Compose comes into play !\
 It provides a simple way of defining your containerized application in a single yaml file. \
-In other words, it simply allows you ta avoid launching multiple "docker run" commands from your terminal and synthesize all these in one file. Cool.\
+In other words, it simply allows you ta avoid launching multiple "docker run" commands from your terminal and synthesize all these in one file. Cool.
 
 <p align="center">
-  <img src="./static/dockerfile_build_run.png" width="600" height="200"/>
+  <img src="./static/compose.png" width="600" height="300"/>
 </p>
 
 An example of compose yaml file is provided in the repository and another one with some comments about each section.\
@@ -293,12 +295,16 @@ docker-compose up
 ```
 
 Yeah, that's it ! You noticed that we previously used 2 docker run commands with multiple parameters... \
-Now, with just docker-compose up, it's all done. Easy, right ? \ 
+Now, with just docker-compose up, it's all done. Easy, right ?
+
 We won't go more in details of compose in this lab as it is only an introduction and you already learned quite a lot today...\
 If you're curious, I encourage you to start with the [getting started](https://docs.docker.com/compose/gettingstarted/) from Docker documentation.
 
 That's it... You've completed the lab. Well done again, hope you enjoyed it ! If you want to improve this lab, if you find bugs or somethings are not clear, raise a pull request !
 
+<p align="center">
+  <img src="./static/Scenette_Open_banking.png" width="600" height="300"/>
+</p>
 
 # X. Resources
 
