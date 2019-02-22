@@ -300,7 +300,8 @@ Now, with just docker-compose up, it's all done. Easy, right ?
 We won't go more in details of compose in this lab as it is only an introduction and you already learned quite a lot today...\
 If you're curious, I encourage you to start with the [getting started](https://docs.docker.com/compose/gettingstarted/) from Docker documentation.
 
-That's it... You've completed the lab. Well done again, hope you enjoyed it ! If you want to improve this lab, if you find bugs or somethings are not clear, raise a pull request !
+That's it... You've completed the lab. Well done again, hope you enjoyed it ! If you want to improve this lab, if you find bugs or somethings are not clear, raise a pull request !\
+Now, it's beer time !!
 
 <p align="center">
   <img src="./static/Scenette_Open_banking.png" width="600" height="300"/>
