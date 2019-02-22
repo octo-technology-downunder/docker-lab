@@ -113,7 +113,7 @@ ps : **-a** allow you to see all containers, event the stopped ones but we'll se
 As you can see, we've run a container in daemon... Now, suppose you want to access his logs, important command :
 
 ```bash
-docker container logs <your_container_name>
+docker container logs <your_container_id>
 ```
 
 All the logs are supposed to print in your terminal. Easy! Here you won't see anything but just keep that in mind to debug for your future missions.
@@ -174,15 +174,15 @@ That's it for this part, don't forget to stop and remove your containers! \
 Several ways to do it...
 
 ```bash
-docker container stop <container_name_1> <container_name_2> ...
+docker container stop <container_id_1> <container_id_2> ...
  
-docker container rm <container_name_1> <container_name_2> ... 
+docker container rm <container_id_1> <container_id_2> ... 
 ```
 
 Or simply:
 
 ```bash
-docker container rm -f <container_name_1> <container_name_2> ... 
+docker container rm -f <container_id_1> <container_id_2> ... 
 ```
 
 
