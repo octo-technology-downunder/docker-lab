@@ -108,7 +108,7 @@ Yeah! You should see the two containers you've created listed like below.
   <img src="./static/docker_container_ls.png"/>
 </p>
 
-ps : **-a** allow you to see all containers, event the stopped ones but we'll see that later.
+ps : **-a** allows you to see all containers, event the stopped ones but we'll see that later.
 
 As you can see, we've run a container in daemon... Now, suppose you want to access his logs, important command :
 
@@ -132,6 +132,20 @@ You should see a nice message from nginx:
 
 All is up and running, quite fast to right?
 
+In the next part, we are going to talk about networks. But first, let's remove our containers.\
+Several ways to do it...
+
+```bash
+docker container stop <container_id_1> <container_id_2> ...
+ 
+docker container rm <container_id_1> <container_id_2> ... 
+```
+
+Or simply:
+
+```bash
+docker container rm -f <container_id_1> <container_id_2> ... 
+```
 
 ### Docker network
 
@@ -171,19 +185,6 @@ You can see some basic information and specially the list of all containers insi
 </p>
 
 That's it for this part, don't forget to stop and remove your containers! \
-Several ways to do it...
-
-```bash
-docker container stop <container_id_1> <container_id_2> ...
- 
-docker container rm <container_id_1> <container_id_2> ... 
-```
-
-Or simply:
-
-```bash
-docker container rm -f <container_id_1> <container_id_2> ... 
-```
 
 
 Any questions ? \
@@ -267,10 +268,12 @@ Find some information on the doc [here](https://docs.docker.com/storage/) or on 
 
 How do we do it now ? With the **-v** parameter. Just like this :
 ```bash
-docker run -d --name proxy -p 80:80 -v nginx.conf:/etc/nginx/conf.d/default.conf nginx 
+docker run -d --name proxy -p 80:80 -v $(pwd)/nginx.conf:/etc/nginx/conf.d/default.conf nginx 
 ```
 
-Help : -v path_of_file_to_map:/path_of_file_inside_container
+Help : \
+**-v** path_of_file_to_map:/path_of_file_inside_container\
+**$(pwd)** is just a wing to indicate the path to the conf file. Supposing your are in the directory containing your nginx.conf file.
 
 Now, you know how to provides custom configurations files inside your containers! The same applies for any type of data :)
 Great, now the final topic we will cover... Let's go for compose!
