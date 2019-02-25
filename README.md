@@ -217,7 +217,7 @@ The Dockerfile allows you to create the list of instructions necessary to create
 </p>
 
 
-Take a look at the Dockerfile it the current directory. \
+*Git clone this repository* and *take a look at the Dockerfile* it the current directory. \
 Here's a list of the most important KEYWORDS:
 * **FROM**: used to install the minimal Linux distribution on the container. 
 * **RUN**: used to list the commands to execute on your container.
